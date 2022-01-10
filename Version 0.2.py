@@ -1,10 +1,10 @@
 import os
-import pandas as pd
+import pandas as pd 
 import random
 import matplotlib.pyplot as plt
 import numpy as np
 from pandas.core.indexes.base import Index
-from datetime import date, timedelta 
+from datetime import date, timedelta
 
 def clear(): 
     os.system('cls')
@@ -78,9 +78,9 @@ while ans  == True :
                 cargo = input("Write here and press enter --> ")
 
                 print("PLEASE ENTER THE FOLLOWING DETAILS : ")
-                Weight = int(input("Please Enter the Weight (Kg) of the cargo : "))
-                Length = int(input("Please Enter the Length of the cargo : "))
-                Height = int(input("Please Enter the Height of the cargo : "))
+                Weight = int(input("Please Enter the Weight(Kg) of the cargo (Minimum : 1m): "))
+                Length = int(input("Please Enter the Length(m) of the cargo (Minimum : 1m): "))
+                Height = int(input("Please Enter the Height(m) of the cargo (Minimum : 1m): "))
 
                 clear()
 
@@ -106,11 +106,13 @@ while ans  == True :
                 Item = input("Please enter what is inside the package : ")
                 Quantity = input("Please enter the quantity of the item : ")
                 package_id = random.randint(0,900)
-                a = int(input("WHAT SERVICE TYPE DO YOU REQUIRE : 1) EXPRESS 2) REGULAR"))
+                a = int(input("WHAT SERVICE TYPE DO YOU REQUIRE : 1) EXPRESS 2) REGULAR = "))
                 if a == 1:
                     transport = "Flight"
                 elif a == 2:
                     transport = "Ship"
+
+                clear()
 
 
                 print("""
@@ -134,6 +136,10 @@ while ans  == True :
                 Refund = {"ID":[package_id],"Package_Type":[cargo],"Sended_Date":[date.today()],"Expected_Date":[date.today()+timedelta(days = 7)]}
                 a = pd.DataFrame(Refund)
                 a.to_csv(r"C:\Users\ayann\OneDrive\Desktop\Assingment-20220102T060307Z-001\Assingment\Date.csv",header = False, mode = 'a')
+
+                input()
+                clear()
+                
         
             elif customer_portal1 == 2:
                 print("""
